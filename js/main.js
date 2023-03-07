@@ -8,8 +8,9 @@
  *
  */
 
-//const BaseURL = "https://jmartel.webdev.cmaisonneuve.qc.ca/n61/vino/";
-const BaseURL = document.baseURI;
+//const BaseURL = document.baseURI;
+const BaseURL = "http://127.0.0.1:8080/waitingForPascal/vino_etu/";
+
 console.log(BaseURL);
 window.addEventListener('load', function() {
     console.log("load");
@@ -17,11 +18,13 @@ window.addEventListener('load', function() {
         console.log(element);
         element.addEventListener("click", function(evt){
             let id = evt.target.parentElement.dataset.id;
-            let requete = new Request(BaseURL+"index.php?requete=boireBouteilleCellier", {method: 'POST', body: '{"id": '+id+'}'});
+            // let requete = new Request(BaseURL+"index.php?requete=boireBouteilleCellier", {method: 'POST', body: '{"id": '+id+'}'});
+            let requete = new Request(BaseURL+"?requete=boireBouteilleCellier", {method: 'POST', body: '{"id": '+id+'}'});
 
             fetch(requete)
             .then(response => {
                 if (response.status === 200) {
+                  location.reload();
                   return response.json();
                 } else {
                   throw new Error('Erreur');
@@ -45,6 +48,7 @@ window.addEventListener('load', function() {
             fetch(requete)
             .then(response => {
                 if (response.status === 200) {
+                  location.reload();
                   return response.json();
                 } else {
                   throw new Error('Erreur');
