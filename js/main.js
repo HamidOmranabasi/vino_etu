@@ -133,7 +133,11 @@ window.addEventListener('load', function() {
             "quantite":bouteille.quantite.value,
             "millesime":bouteille.millesime.value,
           };
-          let requete = new Request(BaseURL+"?requete=ajouterNouvelleBouteilleCellier", {method: 'POST', body: JSON.stringify(param)});
+
+
+          console.log(param.prix);
+
+          //let requete = new Request(BaseURL+"?requete=ajouterNouvelleBouteilleCellier", {method: 'POST', body: JSON.stringify(param)});
             fetch(requete)
                 .then(response => {
                     if (response.status === 200) {
@@ -155,4 +159,3 @@ window.addEventListener('load', function() {
     
 
 });
-
