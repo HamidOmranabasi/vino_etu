@@ -1,6 +1,6 @@
 # vino
 
-#This project is based on a template provided by Johnathan Martel and extended by our team for the Web 2 course.”
+👉 This project is based on a template provided by Johnathan Martel and extended by our team for the Web 2 course.
 
 Projet en cours de développement par les étudiants des groupes de Projet Web 2.
 
